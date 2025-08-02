@@ -18,6 +18,11 @@
       "types": "./dist/react/index.d.ts",
       "require": "./dist/react/index.js",
       "import": "./dist/react/index.js"
+    },
+    "./vue": {
+      "types": "./dist/vue/index.d.ts",
+      "require": "./dist/vue/index.js",
+      "import": "./dist/vue/index.js"
     }
   },
   "scripts": {
@@ -47,12 +52,17 @@
     "tsup": "^8.4.0",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2",
+    "vue": "^3.5.2",
     "wrangler": "^4.20.2"
+  },
+  "peerDependencies": {
+    "vue": "^3.0.0"
   },
   "tsup": {
     "entry": [
       "src/index.ts",
-      "src/react/index.ts"
+      "src/react/index.ts",
+      "src/vue/index.ts"
     ],
     "format": [
       "esm"
@@ -62,6 +72,7 @@
     "outDir": "dist",
     "external": [
       "react",
+      "vue",
       "@modelcontextprotocol/sdk"
     ]
   },
